@@ -1,3 +1,3 @@
-## 1.2.8
+## 1.3.0
 
-Updated Customization Options.
+Updated Readme.

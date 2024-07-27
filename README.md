@@ -15,8 +15,10 @@ Navigation SideBar is Fully Customizable Navigator Widget.
 
 ## Features
 
-![Navigation with selection](assets/videos/video1.gif)
-![Navigation Items on Center](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video2.gif)
+![Navigation with selection](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video1.gif) ![Navigation Items on Center](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video2.gif)
+![Navigation with Expanded Button](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video3.gif) ![Navigation with Indicator](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video4.gif)
+![Navigation with Customization](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video5.gif) ![Navigation with Indicator Customization](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video6.gif)
+![Navigation with Buttom and Top Widgets](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video7.gif) ![Customization of Expanded Button](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video8.gif)
 
 
 ## Getting started
