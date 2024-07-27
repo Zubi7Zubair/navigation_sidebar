@@ -23,7 +23,7 @@ Navigation SideBar is Fully Customizable Navigator Widget.
 ![Navigation with Indicator Customization](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video6.gif)
 ![Navigation with Button and Top Widgets](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video7.gif)
 ![Customization of Expanded Button](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video8.gif)
-
+![Navigation with Bottom Widgets](https://github.com/Zubi7Zubair/navigation_sidebar/blob/main/assets/videos/video9.gif)
 
 ## Getting started
 
