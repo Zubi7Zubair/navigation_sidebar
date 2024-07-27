@@ -15,9 +15,9 @@ Navigation SideBar is Fully Customizable Navigator Widget.
 
 ## Features
 
-![Navigation with selection](assets/videos/video9.gif)
-![Navigation Items on Center](assets/videos/test2.gif)
-![Navigation](assets/test1.gif)
+![Navigation with selection](assets/videos/video1.gif)
+![Navigation Items on Center](assets/videos/video2.gif)
+
 
 ## Getting started
 
