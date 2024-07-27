@@ -1,7 +1,8 @@
 name: navigation_sidebar
-description: "A new Flutter project."
-version: 0.0.1
-homepage:
+description: "Navigation SideBar is like a Navigator. When you click on items it takes you on page and item will be selected. Navigation SideBar is Fully Customizable."
+version: 1.2.6
+homepage: https://pub.dev/publishers/zubair.app/packages
+
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
@@ -23,9 +24,9 @@ dev_dependencies:
 flutter:
 
   # To add assets to your package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/videos/
+    - assets/
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages

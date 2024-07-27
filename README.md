@@ -11,29 +11,116 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Navigation SideBar is Fully Customizable Navigator Widget.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+![Navigation with selection](assets/videos/video9.gif)
+![Navigation Items on Center](assets/videos/test2.gif)
+![Navigation](assets/test1.gif)
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the Package in your pubspec.yaml file.
+import the package.
+Then Write NavigationSideBar and in items use NavigationSideBarItem.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+
 
 ```dart
-const like = 'sample';
+
+Scaffold(
+  body: Row(
+    children: [
+      NavigationSideBar(
+        isExtended: _isExtended,
+        isIndicatorActive: true,
+        items: [
+          NavigationSideBarItem(
+            selectedIcon: Icons.home_filled,
+            unSelectedIcon: Icons.home_outlined,
+            text: 'Home'),
+          NavigationSideBarItem(
+            selectedIcon: Icons.screen_search_desktop_rounded,
+            unSelectedIcon: Icons.screen_search_desktop_outlined,
+            text: 'Search'),
+          NavigationSideBarItem(
+            selectedIcon: Icons.settings_rounded,
+            unSelectedIcon: Icons.settings_outlined,
+            text: 'Settings'),
+        ],
+        initialSelectedIndex: _selectedIndex,
+        onItemSelected: (int value) {
+          setState(() {
+            _selectedIndex = value;
+            });
+          },
+        ),
+        Expanded(child: list[_selectedIndex]),
+        ],
+      ),
+    );
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+    import 'package:flutter/material.dart';
+    import 'package:navigation_sidebar.dart';
+    import 'package:navigation_sidebar_theme.dart';
+
+    void main() {
+      runApp(const MyApp());
+    }
+
+    class MyApp extends StatefulWidget {
+    const MyApp({super.key});
+
+    @override
+    State<MyApp> createState() => _MyAppState();
+    }
+
+    class _MyAppState extends State<MyApp> {
+    int _selectedIndex = 0;
+
+    @override
+    Widget build(BuildContext context) {
+    return MaterialApp(
+    home: NavigationSideBar(
+    items: [
+    Page1(),
+    Page2(),
+    Page3(),
+    ],
+    onItemSelected: (int index) {
+    setState(() {
+    _selectedIndex = index;
+    });
+    },
+    initialSelectedIndex: _selectedIndex,
+    isExtended: true, isIndicatorActive: true,
+
+        animationDuration: Duration(milliseconds: 500),
+        bottomWidget2: Add bottom widget here ,
+        bottomWidget:  Add bottom widget here,
+        topWidget2: Add top widget here,
+        topWidget: Add top widget here,
+        collapsedWidth: 60,
+        extendedWidth: 200,
+        showExtendedButton: true,
+
+        theme: NavigationSideBarTheme(
+          backgroundColor: Colors.white,
+          elevation: 10,
+          selectedIconColor: Colors.blue,
+          selectedTextStyle: TextStyle(
+              color: Colors.blue, fontSize: 20, fontWeight: FontWeight.bold),
+          unSelectedIconColor: Colors.black,
+          unSelectedTextStyle: TextStyle(
+              color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+       ),
+      );
+     }
+    }

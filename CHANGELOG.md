@@ -1,3 +1,3 @@
-## 0.0.1
+## 1.2.6
 
-* TODO: Describe initial release.
+Updated Customization Options.
