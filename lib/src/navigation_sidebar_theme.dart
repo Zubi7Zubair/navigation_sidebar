@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class NavigationSideBarTheme {
+class NavSideBarTheme {
   final TextStyle selectedTextStyle; // Customize selected text style
 
   final double? selectedIconSize; // Customize selected icon size
 
   final Color?
-      selectedItemBackgroundColor; // Customize selected background color
+  selectedItemBackgroundColor; // Customize selected background color
 
   final TextStyle? unSelectedTextStyle; // Customize unselected text style
 
   final double? unSelectedIconSize; // Customize unselected icon size
 
   final Color?
-      unSelectedItemBackgroundColor; // Customize unselected background color
+  unSelectedItemBackgroundColor; // Customize unselected background color
 
   final Color? selectedIconColor; // Customize selected icon color
 
@@ -28,31 +28,31 @@ class NavigationSideBarTheme {
   final EdgeInsetsGeometry? itemPadding; // Customize item padding
 
   final double?
-      collapsedItemInsideHeight; // Customize collapsed item inside height
+  collapsedItemInsideHeight; // Customize collapsed item inside height
 
   final double? extendedItemInsideWidth; // Customize extended item inside width
 
   final int? textMaxLines; // Customize text max lines
 
   final MainAxisAlignment?
-      extendedMainAxisAlignment; // Customize extended main axis alignment
+  extendedMainAxisAlignment; // Customize extended main axis alignment
 
   final MainAxisAlignment?
-      collapsedMainAxisAlignment; // Customize collapsed main axis alignment
+  collapsedMainAxisAlignment; // Customize collapsed main axis alignment
 
   final CrossAxisAlignment?
-      extendedCrossAxisAlignment; // Customize extended cross axis alignment
+  extendedCrossAxisAlignment; // Customize extended cross axis alignment
 
   final CrossAxisAlignment?
-      collapsedCrossAxisAlignment; // Customize collapsed cross axis alignment
+  collapsedCrossAxisAlignment; // Customize collapsed cross axis alignment
 
   final EdgeInsetsGeometry? itemMargin; // Customize item margin
 
   final BorderRadiusGeometry?
-      selectedItemBorderRadius; // Customize selected item border radius
+  selectedItemBorderRadius; // Customize selected item border radius
 
   final BorderRadiusGeometry?
-      unSelectedItemBorderRadius; // Customize unselected item border radius
+  unSelectedItemBorderRadius; // Customize unselected item border radius
 
   final double? extendedIndicatorGap; // Customize extended indicator gap
 
@@ -68,7 +68,7 @@ class NavigationSideBarTheme {
 
   final double? indicatorBorderRadius; // Customize indicator border radius
 
-  const NavigationSideBarTheme({
+  const NavSideBarTheme({
     this.selectedTextStyle = const TextStyle(
         color: Colors.blue,
         fontWeight: FontWeight.bold,
