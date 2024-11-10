@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../navigation_sidebar.dart';
 import 'navigation_sidebar_provider.dart';
 
-
 class NavSideBarItem {
   final IconData selectedIcon;
   final IconData unSelectedIcon;
@@ -22,7 +21,7 @@ class NavSideBarItem {
 
 class NavigationSideBar extends StatefulWidget {
   final List<NavSideBarItem>
-  items; // List of items to be displayed in the sidebar
+      items; // List of items to be displayed in the sidebar
 
   final int initialSelectedIndex; // Initial selected index
 
@@ -35,10 +34,10 @@ class NavigationSideBar extends StatefulWidget {
   final EdgeInsetsGeometry? sideBarPadding; // Padding for the sidebar
 
   final BorderRadiusGeometry?
-  extendedBorderRadius; // Border radius for the extended sidebar
+      extendedBorderRadius; // Border radius for the extended sidebar
 
   final BorderRadiusGeometry?
-  collapsedBorderRadius; // Border radius for the collapsed sidebar
+      collapsedBorderRadius; // Border radius for the collapsed sidebar
 
   final double? height; // Height of the sidebar
 
@@ -51,10 +50,10 @@ class NavigationSideBar extends StatefulWidget {
   final double? collapsedWidth; // Width of the collapsed sidebar
 
   final Widget?
-  bottomWidget; // Widget to be displayed at the bottom of the sidebar
+      bottomWidget; // Widget to be displayed at the bottom of the sidebar
 
   final Widget?
-  bottomWidget2; // Widget to be displayed at the bottom of the sidebar
+      bottomWidget2; // Widget to be displayed at the bottom of the sidebar
 
   final Widget? topWidget; // Widget to be displayed at the top of the sidebar
 
@@ -67,6 +66,7 @@ class NavigationSideBar extends StatefulWidget {
   final bool? showExtendedButton; // Whether to show the extended button or not
 
   const NavigationSideBar({
+    super.key,
     required this.items, // List of items to be displayed in the sidebar
     required this.initialSelectedIndex, // Initial selected index
     required this.onItemSelected, // Callback to handle page changes
@@ -123,7 +123,7 @@ class _NavigationSideBarState extends State<NavigationSideBar> {
             ? widget.extendedBorderRadius
             : widget.collapsedBorderRadius,
         shadowColor:
-        widget.theme.shadowColor ?? Colors.black, // Customize shadow color
+            widget.theme.shadowColor ?? Colors.black, // Customize shadow color
         elevation: widget.theme.elevation ?? 10, // Customize elevation
         child: AnimatedContainer(
           height: widget.height, // Set the height of the sidebar
@@ -176,134 +176,134 @@ class _NavigationSideBarState extends State<NavigationSideBar> {
                       decoration: BoxDecoration(
                           borderRadius: _selectedIndex == index
                               ? item.selectedItemBorderRadius ??
-                              widget.theme.selectedItemBorderRadius
+                                  widget.theme.selectedItemBorderRadius
                               : item.unSelectedItemBorderRadius ??
-                              widget.theme.unSelectedItemBorderRadius,
+                                  widget.theme.unSelectedItemBorderRadius,
                           color: _selectedIndex == index
                               ? widget.theme.selectedItemBackgroundColor ??
-                              const Color.fromRGBO(224, 224, 224,
-                                  1) // Customize selected background color
+                                  const Color.fromRGBO(224, 224, 224,
+                                      1) // Customize selected background color
                               : widget.theme.unSelectedItemBackgroundColor ??
-                              Colors.grey[
-                              200] // Customize unselected background color
-                      ),
+                                  Colors.grey[
+                                      200] // Customize unselected background color
+                          ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment
                             .start, // Align the items to the start
                         children: [
                           widget.isIndicatorActive
                               ? Container(
-                            decoration: BoxDecoration(
-                                color: _selectedIndex == index
-                                    ? widget.theme
-                                    .indicatorSelectedColor ??
-                                    Colors
-                                        .blue // Customize indicator color
-                                    : widget.theme
-                                    .indicatorUnSelectedColor ??
-                                    Colors.transparent,
-                                borderRadius: BorderRadius.circular(
-                                    widget.theme.indicatorBorderRadius ??
-                                        50)),
-                            width: widget.theme.indicatorWidth ??
-                                4, // Adjust the width of the indicator
-                            height: widget.theme.indicatorHeight ?? 40,
-                          )
+                                  decoration: BoxDecoration(
+                                      color: _selectedIndex == index
+                                          ? widget.theme
+                                                  .indicatorSelectedColor ??
+                                              Colors
+                                                  .blue // Customize indicator color
+                                          : widget.theme
+                                                  .indicatorUnSelectedColor ??
+                                              Colors.transparent,
+                                      borderRadius: BorderRadius.circular(
+                                          widget.theme.indicatorBorderRadius ??
+                                              50)),
+                                  width: widget.theme.indicatorWidth ??
+                                      4, // Adjust the width of the indicator
+                                  height: widget.theme.indicatorHeight ?? 40,
+                                )
                               : Container(),
                           widget.isIndicatorActive
                               ? SizedBox(
-                              width: _provider.isExtended
-                                  ? widget.theme.extendedIndicatorGap ?? 6
-                                  : widget.theme.collapsedIndicatorGap ?? 0)
+                                  width: _provider.isExtended
+                                      ? widget.theme.extendedIndicatorGap ?? 6
+                                      : widget.theme.collapsedIndicatorGap ?? 0)
                               : Container(),
                           Expanded(
                             child: _provider.isExtended
                                 ? Row(
-                              mainAxisAlignment: widget
-                                  .theme.extendedMainAxisAlignment ??
-                                  MainAxisAlignment.start,
-                              crossAxisAlignment: widget
-                                  .theme.extendedCrossAxisAlignment ??
-                                  CrossAxisAlignment.center,
-                              children: [
-                                Flexible(
-                                  child: Icon(
-                                      _selectedIndex == index
-                                          ? item.selectedIcon
-                                          : item.unSelectedIcon,
-                                      color: _selectedIndex == index
-                                          ? widget.theme
-                                          .selectedIconColor ??
-                                          Colors
-                                              .blue // Customize selected color
-                                          : widget.theme
-                                          .unSelectedIconColor ??
-                                          Colors.grey[
-                                          600], // Customize unselected color
-                                      size: _selectedIndex == index
-                                          ? widget.theme.selectedIconSize
-                                          : widget
-                                          .theme.unSelectedIconSize),
-                                ),
-                                SizedBox(
-                                    width: widget.theme
-                                        .extendedItemInsideWidth ??
-                                        8.0),
-                                Flexible(
-                                  child: Text(
-                                    maxLines: widget.theme.textMaxLines,
-                                    item.text,
-                                    style: _selectedIndex == index
-                                        ? widget.theme.selectedTextStyle
-                                        : widget
-                                        .theme.unSelectedTextStyle,
-                                  ),
-                                ),
-                              ],
-                            )
+                                    mainAxisAlignment: widget
+                                            .theme.extendedMainAxisAlignment ??
+                                        MainAxisAlignment.start,
+                                    crossAxisAlignment: widget
+                                            .theme.extendedCrossAxisAlignment ??
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Flexible(
+                                        child: Icon(
+                                            _selectedIndex == index
+                                                ? item.selectedIcon
+                                                : item.unSelectedIcon,
+                                            color: _selectedIndex == index
+                                                ? widget.theme
+                                                        .selectedIconColor ??
+                                                    Colors
+                                                        .blue // Customize selected color
+                                                : widget.theme
+                                                        .unSelectedIconColor ??
+                                                    Colors.grey[
+                                                        600], // Customize unselected color
+                                            size: _selectedIndex == index
+                                                ? widget.theme.selectedIconSize
+                                                : widget
+                                                    .theme.unSelectedIconSize),
+                                      ),
+                                      SizedBox(
+                                          width: widget.theme
+                                                  .extendedItemInsideWidth ??
+                                              8.0),
+                                      Flexible(
+                                        child: Text(
+                                          maxLines: widget.theme.textMaxLines,
+                                          item.text,
+                                          style: _selectedIndex == index
+                                              ? widget.theme.selectedTextStyle
+                                              : widget
+                                                  .theme.unSelectedTextStyle,
+                                        ),
+                                      ),
+                                    ],
+                                  )
                                 : Column(
-                              mainAxisAlignment: widget
-                                  .theme.collapsedMainAxisAlignment ??
-                                  MainAxisAlignment.center,
-                              crossAxisAlignment: widget.theme
-                                  .collapsedCrossAxisAlignment ??
-                                  CrossAxisAlignment.center,
-                              children: [
-                                Flexible(
-                                  child: Icon(
-                                      _selectedIndex == index
-                                          ? item.selectedIcon
-                                          : item.unSelectedIcon,
-                                      color: _selectedIndex == index
-                                          ? widget.theme
-                                          .selectedIconColor ??
-                                          Colors
-                                              .blue // Customize selected color
-                                          : widget.theme
-                                          .unSelectedIconColor ??
-                                          Colors.grey[
-                                          600], // Customize unselected color
-                                      size: _selectedIndex == index
-                                          ? widget.theme.selectedIconSize
-                                          : widget
-                                          .theme.unSelectedIconSize),
-                                ),
-                                SizedBox(
-                                    height: widget.theme
-                                        .collapsedItemInsideHeight ??
-                                        4.0),
-                                Flexible(
-                                  child: Text(
-                                    maxLines: widget.theme.textMaxLines,
-                                    item.text,
-                                    style: _selectedIndex == index
-                                        ? widget.theme.selectedTextStyle
-                                        : widget
-                                        .theme.unSelectedTextStyle,
+                                    mainAxisAlignment: widget
+                                            .theme.collapsedMainAxisAlignment ??
+                                        MainAxisAlignment.center,
+                                    crossAxisAlignment: widget.theme
+                                            .collapsedCrossAxisAlignment ??
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Flexible(
+                                        child: Icon(
+                                            _selectedIndex == index
+                                                ? item.selectedIcon
+                                                : item.unSelectedIcon,
+                                            color: _selectedIndex == index
+                                                ? widget.theme
+                                                        .selectedIconColor ??
+                                                    Colors
+                                                        .blue // Customize selected color
+                                                : widget.theme
+                                                        .unSelectedIconColor ??
+                                                    Colors.grey[
+                                                        600], // Customize unselected color
+                                            size: _selectedIndex == index
+                                                ? widget.theme.selectedIconSize
+                                                : widget
+                                                    .theme.unSelectedIconSize),
+                                      ),
+                                      SizedBox(
+                                          height: widget.theme
+                                                  .collapsedItemInsideHeight ??
+                                              4.0),
+                                      Flexible(
+                                        child: Text(
+                                          maxLines: widget.theme.textMaxLines,
+                                          item.text,
+                                          style: _selectedIndex == index
+                                              ? widget.theme.selectedTextStyle
+                                              : widget
+                                                  .theme.unSelectedTextStyle,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ],
-                            ),
                           ),
                         ],
                       ),
@@ -314,15 +314,15 @@ class _NavigationSideBarState extends State<NavigationSideBar> {
               const Spacer(),
               widget.showExtendedButton == true
                   ? FloatingActionButton(
-                onPressed: () {
-                  toggleIsExtended();
-                },
-                child: Icon(
-                  _provider.isExtended
-                      ? Icons.arrow_back_ios_rounded
-                      : Icons.arrow_forward_ios,
-                ),
-              )
+                      onPressed: () {
+                        toggleIsExtended();
+                      },
+                      child: Icon(
+                        _provider.isExtended
+                            ? Icons.arrow_back_ios_rounded
+                            : Icons.arrow_forward_ios,
+                      ),
+                    )
                   : Container(),
               widget.bottomWidget2 ?? Container(),
               widget.bottomWidget ?? Container(),
